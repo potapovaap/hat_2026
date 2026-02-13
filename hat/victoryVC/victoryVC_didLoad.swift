@@ -49,6 +49,13 @@ extension victoryVC {
         
         //делаем кнопку Назад невидимой
         self.navigationItem.hidesBackButton = true
+        
+        
+        //FOR REVIEW APP
+        gamesCount = (userDefaults.object(forKey: "gamesCount") as? Int) ?? 0
+        gamesToRate = (userDefaults.object(forKey: "gamesToRate") as? Int) ?? 1
+        appIsRated = (userDefaults.object(forKey: "appIsRated") as? Bool) ?? false
+
 
     }
 

@@ -38,7 +38,6 @@ extension gameVC {
            let deletedIndex = usedWordsIndexesForTheGame.firstIndex(of: wordIndex) {
             usedWordsIndexesForTheGame.remove(at: deletedIndex)
             userDefaults.set(usedWordsIndexesForTheGame,forKey: "usedWordsIndexesForTheGame")
-            //print("вернули в игру: \(curWord)")
         }
         
         // если не последнее слово
@@ -80,8 +79,6 @@ extension gameVC {
 	}
     
 	@objc func rightButtonPressed() {
-        //print(rightSound)
-        //rightSound?.play()
         
         if gameSounds { rightSound?.play() }
         
@@ -157,9 +154,6 @@ extension gameVC {
     }
     
     func nextWord() {
-        
-        //print("nextWord")
-        //print(usedWordsIndexesForTheGame)
         var index = Random.randomInt(min: 0, max: wordsForTheGame.count-1)
         var whiteStep = 0
         while usedWordsIndexesForTheGame.contains(index) {
@@ -183,15 +177,12 @@ extension gameVC {
         wordLabel.text = curWord
         userDefaults.set(curWord, forKey: "curWord")
         
-        //print("next word:\(curWord)")
-        //print(wordsForTheGame.count)
-        //print(usedWordsIndexesForTheGame.count)
+
         
     }
     
     func finishGame(currentGameResultStatus: String) {
         //timer.invalidate()
-        //print("finishGame :\(currentGameResultStatus)")
         // сохраняем статус игры - Время вышло или слова закончились
         gameResultStatus = currentGameResultStatus
         userDefaults.set(gameResultStatus, forKey: "gameResultStatus")
@@ -224,8 +215,6 @@ extension gameVC {
             userDefaults.set(curTime,forKey: "curTime")
         }
         
-        //print(usedWordsIndexesForTheGame)
-        //print(wordsForTheGame)
         // переходим к окну результат
         goNextVC("resultsVC")
         

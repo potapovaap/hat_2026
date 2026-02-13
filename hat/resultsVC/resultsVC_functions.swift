@@ -66,7 +66,6 @@ extension resultsVC {
     
     func updatePlayerScore(score: Int) {
         guard let currentPlayer = players.first(where: {$0.name == gameResultPlayerName}) else { return }
-        // print(currentPlayer.name)
         
         // добавляем очко к нужному раунду
         switch roundsInGameIndex {
@@ -101,7 +100,7 @@ extension resultsVC {
             if let wordIndex = wordsForTheGame.firstIndex(of: curWord) {
                 usedWordsIndexesForTheGame.append(wordIndex)
                 userDefaults.set(usedWordsIndexesForTheGame,forKey: "usedWordsIndexesForTheGame")
-                print("убрали из игры: \(curWord)")
+                
                 if usedWordsIndexesForTheGame.count == wordsForTheGame.count {
                     //шляпа стала пуста
                 }
@@ -114,7 +113,7 @@ extension resultsVC {
                let deletedIndex = usedWordsIndexesForTheGame.firstIndex(of: wordIndex) {
                 usedWordsIndexesForTheGame.remove(at: deletedIndex)
                 userDefaults.set(usedWordsIndexesForTheGame,forKey: "usedWordsIndexesForTheGame")
-                print("вернули в игру: \(curWord)")
+                
                 if usedWordsIndexesForTheGame.count < wordsForTheGame.count {
                     //шляпа стала НЕпуста
                 }

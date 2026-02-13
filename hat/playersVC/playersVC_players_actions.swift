@@ -278,26 +278,20 @@ extension playersVC {
         
         
         // playerNumber
-        print(" UPDATE playerNumber:")
-        print(" deletedIndex: \(deletedIndex)")
-        print(" playerNumber: \(playerNumber)")
         // когда командная игра и удалили команду ДО текущей или когда одиночная игра и удалили игрока ДО текущего
         if deletedIndex < playerNumber {
-            print("deletedIndex < playerNumber")
             playerNumber = playerNumber - 1
             userDefaults.set(playerNumber, forKey: "playerNumber")
             //userDefaults.set(playerNumber - 1, forKey: "playerNumber")
         }
         // когда одиночная игра и удалили текущего игрока и он был последний
         if gameType == 1 && deletedIndex == playerNumber && playerNumber == players.count { //was: playerNumber == players.count - 1
-            print("gameType == 0 deletedIndex == playerNumber")
             playerNumber = playerNumber - 1
             userDefaults.set(playerNumber, forKey: "playerNumber")
             //userDefaults.set(playerNumber - 1, forKey: "playerNumber")
         }
         // когда командная игра и удалили текущую команду и она была последняя
         if gameType == 0 && deletedIndex == playerNumber && playerNumber == players.count {
-            print(" gameType == 0  deletedIndex == playerNumber")
             playerNumber = 0
             userDefaults.set(playerNumber, forKey: "playerNumber")
             //userDefaults.set(0, forKey: "playerNumber")

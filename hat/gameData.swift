@@ -682,7 +682,7 @@ let minWordsCount = 5
 let maxWordsCount = 150
 let stepWordsCount = 1
 
-let minRoundTime = 3 // для теста удалить - изменить на let minRoundTime = 10
+let minRoundTime = 10 // для теста удалить - изменить на let minRoundTime = 10
 let maxRoundTime = 300
 let stepRoundTime = 1
 

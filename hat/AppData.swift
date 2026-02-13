@@ -5,17 +5,17 @@ import UIKit
 let cur_lang = "ru"
 let currentAppVersion = "1.0.0"
 let currentDataVersion = "v_1.0.0"
-let appName = "Kit test"
-let shareText = "Kit test: "
+let appName = "Шляпа"
+let shareText = "Шляпа: "
 let demoState = Demo.inapp
-let app_id = 1577373615
-let full_app_id = 1577373433
+let app_id = 6758521080
+let full_app_id = 6758521080
 let bundle_id = "com.potapova.hat"
 let product_id = "com.potapova.hat.fullVersion"
 let freeSectionsIds = [1]
 let withAllSections = false
 
-var rulesPagesCount = 15
+var rulesPagesCount = 19
 var withParentalGate = false
 
 var productIds = [String]()
@@ -59,7 +59,7 @@ let navigationBarFont = UIFont(name: appFontBold, size: 17) ?? UIFont.systemFont
 // OTHER
 let incorrectSymblosString = ";~`^@#$%№&*|\'/[](){}<>"
 
-let widthCoefiPhone = 0.8
+let widthCoefiPhone = 0.85
 let widthCoefiPad = 0.75
 
 enum Demo {

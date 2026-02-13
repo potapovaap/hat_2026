@@ -86,11 +86,6 @@ extension resultsVC {
         playerLabel.text = (gameResultPlayerName + gotScoresText).uppercased()
         
         
-        //print(players.map({$0.name}))
-        //print(gameResultPlayerName)
-        //print(players[playerNumber].name)
-        //print(roundsInGameIndex)
-        
         //playerLabel.text = "Штормовое предупреждение \(gotScoresText)".uppercased() // для теста удалить
         
         //очки игрока

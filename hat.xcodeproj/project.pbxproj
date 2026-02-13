@@ -13,6 +13,8 @@
 		CA4037082F2A49EF001CECD6 /* all_words_ru.json in Resources */ = {isa = PBXBuildFile; fileRef = CA4037052F2A49EF001CECD6 /* all_words_ru.json */; };
 		CA4037092F2A49EF001CECD6 /* all_words_en.json in Resources */ = {isa = PBXBuildFile; fileRef = CA4037042F2A49EF001CECD6 /* all_words_en.json */; };
 		CAB4C7D62EE9588C00661F2E /* gameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB4C7D52EE9588400661F2E /* gameData.swift */; };
+		CABD6A522F39FAC4006594C2 /* infoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABD6A512F39FAB5006594C2 /* infoVC.swift */; };
+		CABD6A542F3B4353006594C2 /* victoryVC_rateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABD6A532F3B4351006594C2 /* victoryVC_rateApp.swift */; };
 		CACB994D2ED842220022BA12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACB99402ED842220022BA12 /* AppDelegate.swift */; };
 		CACB994E2ED842220022BA12 /* hat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CACB99422ED842220022BA12 /* hat.xcdatamodeld */; };
 		CACB994F2ED842220022BA12 /* langScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACB99442ED842220022BA12 /* langScheme.swift */; };
@@ -124,6 +126,8 @@
 		CA4037042F2A49EF001CECD6 /* all_words_en.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = all_words_en.json; sourceTree = "<group>"; };
 		CA4037052F2A49EF001CECD6 /* all_words_ru.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = all_words_ru.json; sourceTree = "<group>"; };
 		CAB4C7D52EE9588400661F2E /* gameData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gameData.swift; sourceTree = "<group>"; };
+		CABD6A512F39FAB5006594C2 /* infoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = infoVC.swift; sourceTree = "<group>"; };
+		CABD6A532F3B4351006594C2 /* victoryVC_rateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = victoryVC_rateApp.swift; sourceTree = "<group>"; };
 		CACB99402ED842220022BA12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CACB99412ED842220022BA12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CACB99432ED842220022BA12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -256,6 +260,7 @@
 				CAECA6762EE2F79A0000D703 /* playersVC_additional.swift */,
 				CACB9A102EDB564A0022BA12 /* IAPManager.swift */,
 				CACB9A132EDB56C20022BA12 /* downloadVC.swift */,
+				CABD6A512F39FAB5006594C2 /* infoVC.swift */,
 				CACB9A472EDDE0560022BA12 /* settingsVC.swift */,
 				CACB9A462EDDE0560022BA12 /* SettingCells.swift */,
 				CACB9A442EDDDE0E0022BA12 /* rateAppVC.swift */,
@@ -384,6 +389,7 @@
 		CACB99F02EDB50330022BA12 /* victoryVC */ = {
 			isa = PBXGroup;
 			children = (
+				CABD6A532F3B4351006594C2 /* victoryVC_rateApp.swift */,
 				CACB99EA2EDB50330022BA12 /* victoryVC_attributes.swift */,
 				CACB99EB2EDB50330022BA12 /* victoryVC_constraints.swift */,
 				CACB99EC2EDB50330022BA12 /* victoryVC_didLoad.swift */,
@@ -582,11 +588,13 @@
 				CACB9A2A2EDD9D420022BA12 /* ownwordsVC_vars.swift in Sources */,
 				CACB99F72EDB50330022BA12 /* VictoryTableViewCell.swift in Sources */,
 				CACB99842ED84A530022BA12 /* testScreensVC_vars.swift in Sources */,
+				CABD6A542F3B4353006594C2 /* victoryVC_rateApp.swift in Sources */,
 				CACB99852ED84A530022BA12 /* emptyhatVC_didLoad.swift in Sources */,
 				CACB99972ED8AD5C0022BA12 /* gameVC_functions.swift in Sources */,
 				CACB9A482EDDE0560022BA12 /* settingsVC.swift in Sources */,
 				CACB9A492EDDE0560022BA12 /* SettingCells.swift in Sources */,
 				CACB99982ED8AD5C0022BA12 /* gameVC_constraints.swift in Sources */,
+				CABD6A522F39FAC4006594C2 /* infoVC.swift in Sources */,
 				CACB99992ED8AD5C0022BA12 /* gameVC_attributes.swift in Sources */,
 				CACB999A2ED8AD5C0022BA12 /* gameVC_didLoad.swift in Sources */,
 				CACB999B2ED8AD5C0022BA12 /* gameVC_vars.swift in Sources */,
@@ -683,20 +691,24 @@
 				DEVELOPMENT_TEAM = 657X2TCA9V;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = hat/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Шляпа игра в слова для друзей";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.potapova.hat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -716,20 +728,24 @@
 				DEVELOPMENT_TEAM = 657X2TCA9V;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = hat/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Шляпа игра в слова для друзей";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.potapova.hat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;

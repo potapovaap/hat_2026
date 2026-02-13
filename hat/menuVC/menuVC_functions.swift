@@ -123,8 +123,6 @@ extension menuVC {
         let usedWordsIndexesForTheGame = [Int]()
         userDefaults.set(usedWordsIndexesForTheGame, forKey: "usedWordsIndexesForTheGame")
         
-        
-        //print("generateWordsArray")
         // генерим новый набор слов на игру
         let generatedWordsResult = generateWordsArray()
         return generatedWordsResult
@@ -154,23 +152,17 @@ extension menuVC {
         all_words_with_own = []
         all_words_with_own.append(contentsOf: all_words)
         
-        //print(sectionPresets.count)
-        //print(all_themes.count)
-        //print(ownSectionsCount)
-        
         // обнуляем свои темы - начиная с ID 40, 41, 42 и тд:
         let ownSectionsCount = all_themes.count - sectionPresets.count
         for i in 0..<ownSectionsCount {
             all_themes[String(sectionPresets.count + i + 1)] = nil
         }
-        //print(all_themes.count)
         
         for ownWord in ownWords {
             if let curWordSectionId = ownWord.section?.id, let ownWordName = ownWord.name {
                 all_words_with_own.append(ownWordName)
                 if all_themes[String(curWordSectionId)] == nil { all_themes[String(curWordSectionId)] = [] }
                 all_themes[String(curWordSectionId)]?.append(all_words_with_own.count - 1)
-                //print(all_themes[String(curWordSectionId)])
             }
         }
         
@@ -178,12 +170,9 @@ extension menuVC {
         var all_words_for_selected_themes_SET = Set<Int>()
         
         for selectedSectionsId in selectedSectionsIds {
-            //print("selectedSectionsId: \(selectedSectionsId)")
-            //print(all_themes[String(selectedSectionsId)])
             all_words_for_selected_themes_SET.formUnion(all_themes[String(selectedSectionsId)] ?? [])
         }
         all_words_for_selected_themes = Array(all_words_for_selected_themes_SET)
-        //print("all_words_for_selected_themes: \(all_words_for_selected_themes)")
         curThemesWordsCount = all_words_for_selected_themes.count
         
         //Массив с индексами предыдущих слов
@@ -200,8 +189,6 @@ extension menuVC {
         let selectOwnWordsCount = Bool(settings["selectOwnWordsCount"] ?? "\(defaultSelectOwnWordsCount)") ?? defaultSelectOwnWordsCount
         let resultWordsCount = selectOwnWordsCount ? ownWordsCount : wordsCount
 
-        
-        
         //  если выбрали категории, в которых суммарно слов меньше, чем задано в настройках игры то не начинаем новую игру
         if all_words_for_selected_themes.count < resultWordsCount {
             var message = lang_scheme[cur_lang]?["notEnoughWordsAlertMessage"] as? String ?? ""
@@ -210,15 +197,10 @@ extension menuVC {
             showAlertOk(title: lang_scheme[cur_lang]?["notEnoughWordsAlertTitle"] as? String ?? "", message: message)
             return false
         }
-
-        //если все слова есть в prevIndexes
-        //prevIndexes = []
-        //all_words_for_selected_themes
         
         // если слов хватает, то генерим массив слов для игры с количеством слов resultWordsCount
         var wordsForTheGame = [String]()
         for i in 0..<resultWordsCount {
-            //print(i)
             //находим рандомное слово
             var index = Random.randomInt(min: 0, max: all_words_for_selected_themes.count-1)
             var word_index = all_words_for_selected_themes[index] //индекс слова

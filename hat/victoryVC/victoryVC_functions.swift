@@ -6,7 +6,8 @@ extension victoryVC {
 	}
 
 	@objc func menuButtonPressed() {
-		goMenuVC()
+		//goMenuVC()
+        checkIfNeedToRateApp()
 	}
 
 

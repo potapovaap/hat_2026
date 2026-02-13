@@ -29,4 +29,10 @@ class victoryVC : UIViewController,
 	var fontSize = CGFloat(20.0)
 
     var endGameSound : AVAudioPlayer?
+    
+    
+    //FOR REVIEW APP
+    var gamesCount: Int = 0
+    var gamesToRate: Int = 1
+    var appIsRated: Bool = false
 }

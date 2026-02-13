@@ -188,6 +188,7 @@ class SettingCellSwitch: SettingSampleCell {
     
     var switchItem = SettingsSwitch()
     var label = SettingsLabel()
+    var descLabel = SettingsDescLabel()
     weak var delegate: SettingCellSwitchDelegate?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -208,19 +209,102 @@ class SettingCellSwitch: SettingSampleCell {
         backgroundColor = .clear
         self.contentView.addSubview(switchItem)
         self.contentView.addSubview(label)
+        self.contentView.addSubview(descLabel)
+        descLabel.numberOfLines = 2
+        label.textAlignment = .left
         switchItem.addTarget(self, action: #selector(switchValueChanged), for: .valueChanged)
     }
 
     func setConstraints() {
         switchItem.translatesAutoresizingMaskIntoConstraints = false
         label.translatesAutoresizingMaskIntoConstraints = false
+        descLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        label.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15).isActive = true
+        label.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8).isActive = true
+        //label.centerXAnchor.constraint(equalTo: contentView.centerXAnchor, constant: 0).isActive = true
+        label.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.8).isActive = true
+        switchItem.centerYAnchor.constraint(equalTo: label.centerYAnchor).isActive = true
+        switchItem.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8).isActive = true
+        descLabel.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 15).isActive = true
+        descLabel.leadingAnchor.constraint(equalTo: label.leadingAnchor, constant: 0).isActive = true
+        descLabel.trailingAnchor.constraint(equalTo: switchItem.trailingAnchor, constant: 0).isActive = true
+        
+        /*
         label.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
         label.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20).isActive = true
         label.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.8).isActive = true
         switchItem.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
         switchItem.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20).isActive = true
+        */
     }
 }
+
+protocol SettingCellSwitchDelegate: AnyObject {
+    func switchValueChanged(onCell cell: SettingCellSwitch)
+}
+
+class SettingCellSwitchLong: SettingSampleCell {
+    
+    var switchItem = SettingsSwitch()
+    var label = SettingsLabel()
+    var descLabel = SettingsDescLabel()
+    weak var delegate: SettingCellSwitchLongDelegate?
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setAttributes()
+        setConstraints()
+     }
+
+     required init?(coder aDecoder: NSCoder) {
+       super.init(coder: aDecoder)
+    }
+    
+    @objc func switchValueChanged(sender: UISwitch) {
+        delegate?.switchValueChanged(onCell: self)
+    }
+
+    func setAttributes() {
+        backgroundColor = .clear
+        self.contentView.addSubview(switchItem)
+        self.contentView.addSubview(label)
+        self.contentView.addSubview(descLabel)
+        descLabel.numberOfLines = 4
+        label.textAlignment = .left
+        switchItem.addTarget(self, action: #selector(switchValueChanged), for: .valueChanged)
+    }
+
+    func setConstraints() {
+        switchItem.translatesAutoresizingMaskIntoConstraints = false
+        label.translatesAutoresizingMaskIntoConstraints = false
+        descLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        label.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15).isActive = true
+        label.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8).isActive = true
+        //label.centerXAnchor.constraint(equalTo: contentView.centerXAnchor, constant: 0).isActive = true
+        label.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.8).isActive = true
+        switchItem.centerYAnchor.constraint(equalTo: label.centerYAnchor).isActive = true
+        switchItem.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8).isActive = true
+        descLabel.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 15).isActive = true
+        descLabel.leadingAnchor.constraint(equalTo: label.leadingAnchor, constant: 0).isActive = true
+        descLabel.trailingAnchor.constraint(equalTo: switchItem.trailingAnchor, constant: 0).isActive = true
+        
+        /*
+        label.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
+        label.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20).isActive = true
+        label.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.8).isActive = true
+        switchItem.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
+        switchItem.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20).isActive = true
+        */
+    }
+}
+
+protocol SettingCellSwitchLongDelegate: AnyObject {
+    func switchValueChanged(onCell cell: SettingCellSwitchLong)
+}
+
+
 
 class SettingCellImage: SettingSampleCell {
     
@@ -259,9 +343,7 @@ class SettingCellImage: SettingSampleCell {
 }
 
 
-protocol SettingCellSwitchDelegate: AnyObject {
-    func switchValueChanged(onCell cell: SettingCellSwitch)
-}
+
 
 class SettingCellSlider: SettingSampleCell {
     
@@ -300,7 +382,7 @@ class SettingCellSlider: SettingSampleCell {
         valueLabel.translatesAutoresizingMaskIntoConstraints = false
         
         label.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        label.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20).isActive = true
+        label.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15).isActive = true
         //label.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
         //label.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8).isActive = true
         //label.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.45).isActive = true
@@ -376,6 +458,7 @@ class SettingCellSegmentControl: SettingSampleCell {
     
     var segmentControl = SettingsSegmentControl(items: [])
     var label = SettingsLabel()
+    var descLabel = SettingsDescLabel()
     weak var delegate: SettingCellSegmentControlDelegate?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -396,42 +479,42 @@ class SettingCellSegmentControl: SettingSampleCell {
         backgroundColor = .clear
         self.contentView.addSubview(segmentControl)
         self.contentView.addSubview(label)
+        self.contentView.addSubview(descLabel)
+        descLabel.numberOfLines = 5
         segmentControl.addTarget(self, action: #selector(segmentControlValueChanged), for: .valueChanged)
-        
-        if #available(iOS 13.0, *) {
-            /*
-            segmentControl.backgroundColor = UIColor.white
-            //segmentControl.layer.borderColor = UIColor.white.cgColor
-            segmentControl.selectedSegmentTintColor = settingsColor
-            //segmentControl.layer.borderWidth = 1
-
-            let titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
-            segmentControl.setTitleTextAttributes(titleTextAttributes, for:.normal)
-
-            let titleTextAttributes1 = [NSAttributedString.Key.foregroundColor: UIColor.white]
-            segmentControl.setTitleTextAttributes(titleTextAttributes1, for:.selected)
-            */
-          } else {
-        }
     }
 
     func setConstraints() {
         segmentControl.translatesAutoresizingMaskIntoConstraints = false
         label.translatesAutoresizingMaskIntoConstraints = false
+        descLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        label.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0).isActive = true
-        label.centerXAnchor.constraint(equalTo: contentView.centerXAnchor, constant: 0).isActive = true
+        
+
+        label.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15).isActive = true
+        label.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        label.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.95).isActive = true
+        //label.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0).isActive = true
         //label.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.9).isActive = true
         //label.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20).isActive = true
         //label.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 0).isActive = true
         
+        descLabel.topAnchor.constraint(equalTo: segmentControl.bottomAnchor, constant: 10).isActive = true
+        descLabel.leadingAnchor.constraint(equalTo: label.leadingAnchor, constant: 0).isActive = true
+        descLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10).isActive = true
+        
+        segmentControl.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 20).isActive = true
+        segmentControl.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        segmentControl.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.95).isActive = true
+        
+        
+    
         //segmentControl.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 0).isActive = true
-        //segmentControl.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.5).isActive = true
         //segmentControl.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        segmentControl.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 10).isActive = true
+        //segmentControl.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 10).isActive = true
         //segmentControl.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        segmentControl.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true
-        segmentControl.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10).isActive = true
+        //segmentControl.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true
+        //segmentControl.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10).isActive = true
     }
 }
 
@@ -1101,3 +1184,39 @@ class SettingsHeaderLabel : UILabel {
 
     }
 }
+
+class SettingsDescLabel : UILabel {
+
+    init() {
+        super.init(frame: CGRect.zero)
+        setAttributes()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+
+    func setAttributes() {
+        //self.text = "endlabel"
+        self.textColor = settingsLabelTextColor
+        let iphoneConstraints = UIDevice.current.userInterfaceIdiom == .phone
+        if iphoneConstraints {
+            var fontSize: CGFloat = 13
+            switch UIDevice().type {
+            case .iPhone5S,.iPhoneSE: fontSize = 10
+            default: break
+            }
+            self.font = UIFont(name: appFont, size: fontSize)
+            //self.font = UIFont(name: appFont, size: 16)
+        } else {
+            self.font = UIFont(name: appFont, size: 16)
+        }
+
+    }
+
+    func setConstraints() {
+    }
+
+}
+
+

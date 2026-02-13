@@ -26,7 +26,7 @@ class SettingsSectionData {
     var pickerData: [String]
     var desc: String
     
-    init(id: String, name: String, value: String, type: String, pickerData: [String] = [], desc: String) {
+    init(id: String, name: String, value: String, type: String, pickerData: [String] = [], desc: String = "") {
         self.id = id
         self.name = name
         self.value = value
@@ -82,25 +82,25 @@ var settingsSections =
             SettingsSectionData(id: "gameType", name: "Тип игры:", value: "\(defaultGameType)", type: "SettingCellSegmentControl",  pickerData: ["Командная", "Одиночная"], desc: "Командная игра - игроки делятся на команды и слова объясняются игроками внутри команды. Одиночная игра - каждый играет сам за себя и слова объясняются по кругу"),
             SettingsSectionData(id: "roundType", name: "Раунды:", value: defaultRoundTypes, type: "SettingCellCollectionViewTable", pickerData: roundNames, desc: ""),
             SettingsSectionData(id: "roundTime", name: "Время на ход:", value: "\(defaultRoundTime)", type: "SettingCellCollectionView",   pickerData: roundTimes, desc: ""),
-            SettingsSectionData(id: "selectOwnRoundTime", name: "Выбрать своё время на ход", value: "\(defaultSelectOwnRoundTime)", type: "SettingCellSwitch", desc: "Включите настройку, чтобы выбрать своё время на ход ниже"),
+            SettingsSectionData(id: "selectOwnRoundTime", name: "Выбрать своё время на ход", value: "\(defaultSelectOwnRoundTime)", type: "SettingCellSwitch", desc: "Включите настройку, чтобы выбрать своё время на ход ниже:"),
             SettingsSectionData(id: "ownRoundTime", name: "Своё время на ход:", value: "\(defaultRoundTime)", type: "SettingCellSlider", pickerData: ["\(minRoundTime)", "\(maxRoundTime)", "\(stepRoundTime)"], desc: "Выберете здесь своё время на ход"),
             SettingsSectionData(id: "wordsCount", name: "Слов в игре:", value: "\(defaultWordsCount)", type: "SettingCellCollectionView",   pickerData: wordsCountArray, desc: ""),
-            SettingsSectionData(id: "selectOwnWordsCount", name: "Выбрать своё количество слов", value: "\(defaultSelectOwnWordsCount)", type: "SettingCellSwitch", desc: "Включите настройку, чтобы выбрать своё количество слов в игре ниже"),
+            SettingsSectionData(id: "selectOwnWordsCount", name: "Выбрать своё количество слов", value: "\(defaultSelectOwnWordsCount)", type: "SettingCellSwitch", desc: "Включите настройку, чтобы выбрать своё количество слов для игры ниже:"),
             SettingsSectionData(id: "ownWordsCount", name: "Своё количество слов в игре:", value: "\(defaultWordsCount)", type: "SettingCellSlider", pickerData: ["\(minWordsCount)", "\(maxWordsCount)", "\(stepWordsCount)"], desc: "Выберете здесь своё количество слов в игре"),
-            SettingsSectionData(id: "moveTime", name: "Переносить остаток времени", value: "\(defaultMoveTime)", type: "SettingCellSwitch", desc: "Если слова в шляпе закончились, но у команды осталось время, то следующий раунд начинает эта команда и время будет добавлено команде к ее ходу. Настройка \"Переносить остаток времени\" работает только если выключена настройка \"Раунд начинает первая команда\""),
-            SettingsSectionData(id: "roundStartsFirstPlayer", name: "Раунд начинает первая команда", value: "\(defaultMoveTime)", type: "SettingCellSwitch", desc: "Если выбрана настройка \"Раунд начинает первая команда\", то новый раунд всегда начинает первая команда из списка команд. Если настройка выключена, то новый раунд начинает команда, следующая после команды, которая завершила предыдущий раунд"),
-            SettingsSectionData(id: "extraTime", name: "Дополнительное время", value: "\(defaultExtraTime)", type: "SettingCellSwitch", desc: "Один раз за игру команда может использовать дополнительное время - плюс 15 секунд к своему ходу"),
-            SettingsSectionData(id: "commonLastWord", name: "Общее последнее слово", value: "\(defaultCommonLastWord)", type: "SettingCellSwitch", desc: "Все команды могут отгадывать последнее слово"),
-            SettingsSectionData(id: "gameWithTasks", name: "Игра с заданиями", value: "\(defaultGameWithTasks)", type: "SettingCellSwitch", desc: "Команды должны объяснять слова, выполняя задание"),
+            SettingsSectionData(id: "moveTime", name: "Переносить остаток времени", value: "\(defaultMoveTime)", type: "SettingCellSwitchLong", desc: "Если слова в шляпе закончились, но у команды осталось время, то следующий раунд начинает эта команда и у нее будет на игру оставшееся время."),
+            SettingsSectionData(id: "roundStartsFirstPlayer", name: "Раунд начинает первая команда", value: "\(defaultMoveTime)", type: "SettingCellSwitchLong", desc: "Если настройка включена, то новый раунд всегда начинает первая команда. Если настройка выключена, то раунд начинает команда, следующая после команды, которая завершила предыдущий раунд"),
+            SettingsSectionData(id: "extraTime", name: "Дополнительное время", value: "\(defaultExtraTime)", type: "SettingCellSwitch", desc: "Один раз за игру команда может использовать дополнительное время: +15 секунд к своему ходу"),
+            SettingsSectionData(id: "commonLastWord", name: "Общее последнее слово", value: "\(defaultCommonLastWord)", type: "SettingCellSwitch", desc: "Если время игры закончилось, то последнее слово могут отгадывать все команды или игроки"),
+            SettingsSectionData(id: "gameWithTasks", name: "Игра с заданиями", value: "\(defaultGameWithTasks)", type: "SettingCellSwitch", desc: "Команды или игроки должны объяснять слова, выполняя задание"),
+            SettingsSectionData(id: "plusForSpeed", name: "Плюс очко за скорость", value: "\(defaultPlusForSpeed)", type: "SettingCellSwitch", desc: "Если команда отгадывает слово меньше чем за 10 секунд, то прибавляется доп. очко"),
             SettingsSectionData(id: "minusForMistake", name: "Минус очко за пропуск", value: "\(defaultMinusForMistake)", type: "SettingCellSwitch", desc: "За пропуск слова снимается 1 очко"),
-            SettingsSectionData(id: "plusForSpeed", name: "Плюс очко за скорость", value: "\(defaultPlusForSpeed)", type: "SettingCellSwitch", desc: "Если команда отгадывает слово меньше чем за 10 секунд, то прибавляется дополнительное очко"),
-            SettingsSectionData(id: "gameSounds", name: "Звуки", value: "\(defaultGameSounds)", type: "SettingCellSwitch", desc: "Все звуки в игре")
+            SettingsSectionData(id: "gameSounds", name: "Звуки", value: "\(defaultGameSounds)", type: "SettingCellSwitch", desc: "")
         ])
 ]
 
 var settingColors = [UIColor(hex:"7DB25C"), UIColor(hex:"8159A5"), UIColor(hex:"58C7FF"), UIColor(hex:"F7901D"), UIColor(hex:"EB5F96"), UIColor(hex:"FFCB55"), UIColor(hex:"358CD3"), UIColor(hex:"E7574F")]
 
-class settingsVC: UIViewController, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout,  SettingCellTextDelegate, SettingCellTextFieldPickerDelegate, SettingCellSwitchDelegate, SettingCellSliderDelegate, SettingCellStepperDelegate, SettingCellSegmentControlDelegate, SettingCellButtonsControlDelegate {
+class settingsVC: UIViewController, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout,  SettingCellTextDelegate, SettingCellTextFieldPickerDelegate, SettingCellSwitchDelegate, SettingCellSwitchLongDelegate, SettingCellSliderDelegate, SettingCellStepperDelegate, SettingCellSegmentControlDelegate, SettingCellButtonsControlDelegate {
     
 
     var pickerData: [String] = [String]()
@@ -151,6 +151,7 @@ class settingsVC: UIViewController, UITextFieldDelegate, UITableViewDelegate, UI
         settingsTableView.register(SettingCellTextFieldPicker.self, forCellReuseIdentifier: "SettingCellTextFieldPicker")
         settingsTableView.register(SettingCellText.self, forCellReuseIdentifier: "SettingCellText")
         settingsTableView.register(SettingCellSwitch.self, forCellReuseIdentifier: "SettingCellSwitch")
+        settingsTableView.register(SettingCellSwitchLong.self, forCellReuseIdentifier: "SettingCellSwitchLong")
         settingsTableView.register(SettingCellSlider.self, forCellReuseIdentifier: "SettingCellSlider")
         settingsTableView.register(SettingCellStepper.self, forCellReuseIdentifier: "SettingCellStepper")
         settingsTableView.register(SettingCellSegmentControl.self, forCellReuseIdentifier: "SettingCellSegmentControl")
@@ -160,11 +161,15 @@ class settingsVC: UIViewController, UITextFieldDelegate, UITableViewDelegate, UI
         settingsTableView.register(SettingCellCollectionView.self, forCellReuseIdentifier: "SettingCellCollectionView")
         settingsTableView.register(SettingCellCollectionViewTable.self, forCellReuseIdentifier: "SettingCellCollectionViewTable")
         
-        settingsTableView.separatorStyle = .none
-        settingsTableView.separatorColor = .gray
+        settingsTableView.separatorStyle = .singleLine
+        settingsTableView.separatorColor = .white
         settingsTableView.delegate = self
         settingsTableView.dataSource = self
         settingsTableView.backgroundColor = .clear
+        
+        //settingsTableView.estimatedRowHeight = 200.0
+        //settingsTableView.rowHeight = UITableView.automaticDimension
+        
         //убрать клавиатуру когда скролишь таблицу
         settingsTableView.keyboardDismissMode = .onDrag
         
@@ -241,6 +246,15 @@ class settingsVC: UIViewController, UITextFieldDelegate, UITableViewDelegate, UI
         case "SettingCellSwitch":
             let cell = tableView.dequeueReusableCell(withIdentifier: "SettingCellSwitch", for: indexPath) as! SettingCellSwitch
             cell.label.text = data.name
+            cell.descLabel.text = data.desc
+            let curValue = data.value == "false" ? false : true
+            cell.switchItem.setOn(curValue, animated: false)
+            cell.delegate = self
+            return cell
+        case "SettingCellSwitchLong":
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SettingCellSwitchLong", for: indexPath) as! SettingCellSwitchLong
+            cell.label.text = data.name
+            cell.descLabel.text = data.desc
             let curValue = data.value == "false" ? false : true
             cell.switchItem.setOn(curValue, animated: false)
             cell.delegate = self
@@ -288,6 +302,8 @@ class settingsVC: UIViewController, UITextFieldDelegate, UITableViewDelegate, UI
         case "SettingCellSegmentControl":
             let cell = tableView.dequeueReusableCell(withIdentifier: "SettingCellSegmentControl", for: indexPath) as! SettingCellSegmentControl
             cell.label.text = data.name
+            cell.label.textAlignment = .center
+            cell.descLabel.text = data.desc
             cell.segmentControl.removeAllSegments()
             for (index, item) in data.pickerData.enumerated() {
                 cell.segmentControl.insertSegment(withTitle: item, at: index, animated: false)
@@ -329,14 +345,18 @@ class settingsVC: UIViewController, UITextFieldDelegate, UITableViewDelegate, UI
         switch data.type {
         case "SettingCellPicker", "SettingCellImage":
             return 50
-        case "SettingCellSegmentControl", "SettingCellStepper":
+        case "SettingCellSegmentControl":
+            return 170
+        case "SettingCellStepper":
             return 90
         case "SettingCellSlider":
             return 90
         case "SettingCellText":
             return 60
+        case "SettingCellSwitchLong":
+            return 120
         case "SettingCellSwitch":
-            return 55
+            return 90
         case "SettingCellCollectionViewTable":
             return 220
         case "SettingCellCollectionView":
@@ -420,13 +440,21 @@ class settingsVC: UIViewController, UITextFieldDelegate, UITableViewDelegate, UI
             let data = settingsSections[indexPath.section].data[indexPath.row]
             data.value = String(cell.switchItem.isOn)
             save(key: data.id, value: data.value)
+        }
+    }
+    
+    func switchValueChanged(onCell cell: SettingCellSwitchLong) {
+        if let indexPath =  settingsTableView.indexPath(for: cell) {
+            let data = settingsSections[indexPath.section].data[indexPath.row]
+            data.value = String(cell.switchItem.isOn)
+            save(key: data.id, value: data.value)
             
             
             // Если включена настройка "переносить остаток по времени" - то убрать функцию "раунд начинает первая команда". И наоборот:
             if data.id == "moveTime" && data.value == "true" {
                 settingsSections[indexPath.section].data[indexPath.row + 1].value =  "false"
                 save(key: "roundStartsFirstPlayer", value: "false")
-                if let cell = settingsTableView.cellForRow(at: IndexPath(row: indexPath.row + 1, section: indexPath.section)) as? SettingCellSwitch {
+                if let cell = settingsTableView.cellForRow(at: IndexPath(row: indexPath.row + 1, section: indexPath.section)) as? SettingCellSwitchLong {
                     cell.switchItem.isOn = false
                 }
                 //settingsTableView.reloadData()
@@ -435,13 +463,14 @@ class settingsVC: UIViewController, UITextFieldDelegate, UITableViewDelegate, UI
                 settingsSections[indexPath.section].data[indexPath.row - 1].value =  "false"
                 save(key: "moveTime", value: "false")
                 //settingsTableView.reloadData()
-                if let cell = settingsTableView.cellForRow(at: IndexPath(row: indexPath.row - 1, section: indexPath.section)) as? SettingCellSwitch {
+                if let cell = settingsTableView.cellForRow(at: IndexPath(row: indexPath.row - 1, section: indexPath.section)) as? SettingCellSwitchLong {
                     cell.switchItem.isOn = false
                 }
                 
             }
         }
     }
+    
     
     func sliderValueChanged(onCell cell: SettingCellSlider) {
         if let indexPath =  settingsTableView.indexPath(for: cell) {
@@ -465,9 +494,6 @@ class settingsVC: UIViewController, UITextFieldDelegate, UITableViewDelegate, UI
         }
     }
     func segmentControlValueChanged(onCell cell: SettingCellSegmentControl) {
-        print("segmentControlValueChanged")
-        print(cell.segmentControl.selectedSegmentIndex)
-        
         if let indexPath =  settingsTableView.indexPath(for: cell) {
             let data = settingsSections[indexPath.section].data[indexPath.row]
             //data.value = "\(cell.segmentControl.selectedSegmentIndex)"
@@ -532,7 +558,6 @@ class settingsVC: UIViewController, UITextFieldDelegate, UITableViewDelegate, UI
     }
     
     func shareApp(onCell: SettingCellImage) {
-        //print("share")
         let text = shareText + "https://apps.apple.com/app/id\(app_id)"
         let activities = [text as AnyObject]
         let activityController = UIActivityViewController(activityItems: activities, applicationActivities: nil)
@@ -600,7 +625,7 @@ class settingsVC: UIViewController, UITextFieldDelegate, UITableViewDelegate, UI
         
         
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let curSection = collectionViewData[collectionView.tag]?.section ?? 0
         let curRow = collectionViewData[collectionView.tag]?.row ?? 0
@@ -614,7 +639,7 @@ class settingsVC: UIViewController, UITextFieldDelegate, UITableViewDelegate, UI
             // если настройка = тип игры и есть текущая игра то предупреждение
             if data.id == "roundType" && inGame {
                 //алерт - точно изменить тип игры?  начнется новая игра?
-                let alert = UIAlertController(title: lang_scheme[cur_lang]?["editGameTypeAlertTitle"] as? String, message: lang_scheme[cur_lang]?["editGameTypeAlertMessage"] as? String, preferredStyle: .alert)
+                let alert = UIAlertController(title: lang_scheme[cur_lang]?["editRoundTypeAlertTitle"] as? String, message: lang_scheme[cur_lang]?["editRoundTypeAlertMessage"] as? String, preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: cancelTitle, style: UIAlertAction.Style.default, handler: nil))
                 alert.addAction(UIAlertAction(title: yesTitle, style: .default) { (_) in
                     let curValue = self.collectionViewData[collectionView.tag]?.value ?? ""

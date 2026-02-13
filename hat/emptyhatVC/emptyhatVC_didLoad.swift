@@ -40,7 +40,6 @@ extension emptyhatVC {
         //titleLabel.sizeToFit()
         
         let curTime = (userDefaults.object(forKey: "curTime") as? Int) ?? 0
-        print(curTime)
         
         let hatIsEmptyMessage = lang_scheme[cur_lang]?["hatIsEmptyMessage"] as? String ?? ""
         textLabel.text = hatIsEmptyMessage.replacingOccurrences(of: "TIME", with: "\(curTime)").uppercased()

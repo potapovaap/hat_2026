@@ -1,8 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -11,15 +14,76 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="ewj-BW-v5D">
+                                <rect key="frame" x="-65.666666666666686" y="0.0" width="524.33333333333337" height="852"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ewj-BW-v5D" secondAttribute="height" multiplier="500:812" id="aRz-er-gM0"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="kTd-WK-Pai">
+                                <rect key="frame" x="78.666666666666671" y="306" width="235.66666666666663" height="140"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="kTd-WK-Pai" secondAttribute="height" multiplier="153:91" id="IJq-yd-akb"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ewj-BW-v5D" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="3Ev-gd-N4S"/>
+                            <constraint firstItem="kTd-WK-Pai" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="RT5-nC-wwy"/>
+                            <constraint firstItem="ewj-BW-v5D" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="adP-1I-Dgl"/>
+                            <constraint firstItem="kTd-WK-Pai" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-50" id="dd1-bN-h7r"/>
+                            <constraint firstItem="kTd-WK-Pai" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.5" id="eAi-vf-w6H"/>
+                            <constraint firstItem="kTd-WK-Pai" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.6" id="efQ-VP-yTa"/>
+                            <constraint firstItem="ewj-BW-v5D" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="gDA-j7-CH1"/>
+                            <constraint firstAttribute="bottom" secondItem="ewj-BW-v5D" secondAttribute="bottom" id="gmB-nC-zDT"/>
+                            <constraint firstItem="ewj-BW-v5D" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="lFj-XN-oBg"/>
+                            <constraint firstAttribute="trailing" secondItem="ewj-BW-v5D" secondAttribute="trailing" id="ymC-A3-sC3"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="lFj-XN-oBg"/>
+                                <exclude reference="adP-1I-Dgl"/>
+                                <exclude reference="ymC-A3-sC3"/>
+                                <exclude reference="gDA-j7-CH1"/>
+                                <exclude reference="gmB-nC-zDT"/>
+                                <exclude reference="3Ev-gd-N4S"/>
+                                <exclude reference="efQ-VP-yTa"/>
+                                <exclude reference="eAi-vf-w6H"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="lFj-XN-oBg"/>
+                                <include reference="gmB-nC-zDT"/>
+                                <include reference="3Ev-gd-N4S"/>
+                                <include reference="efQ-VP-yTa"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="constraints">
+                                <include reference="adP-1I-Dgl"/>
+                                <include reference="ymC-A3-sC3"/>
+                                <include reference="gDA-j7-CH1"/>
+                                <include reference="eAi-vf-w6H"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.671755725190835" y="374.64788732394368"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="background" width="500" height="812"/>
+        <image name="logo" width="306" height="182.33332824707031"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

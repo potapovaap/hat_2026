@@ -91,13 +91,11 @@ extension gameVC {
         curScore = (userDefaults.object(forKey: "curScore") as? Int) ?? curScore
         scoreLabel.text = "\(curScore)"
         
-        //print("nextWord")
         // текущее слово
         curWord = (userDefaults.object(forKey: "curWord") as? String) ?? "--"
         if curWord == "--" { nextWord() }
         else { wordLabel.text = curWord }
         
-        //print("nextTask")
         // текущее задание
         curTask = (userDefaults.object(forKey: "curTask") as? String) ?? ""
         if gameWithTasks == false { taskLabel.isHidden = true }
@@ -115,8 +113,6 @@ extension gameVC {
         if gameType == 0 {
             playersLabel.text = "играет команда:\n\(players[playerNumber].name ?? "")".uppercased()
             // нужно ли добавлять игроку кнопку ДОП ВРЕМЯ
-            //print(extraTime)
-            //print(!players[playerNumber].extraTimeIsUsed)
             
             if extraTime && !players[playerNumber].extraTimeIsUsed { extraTimeButton.isHidden = false }
             else { extraTimeButton.isHidden = true }
@@ -128,15 +124,12 @@ extension gameVC {
                 nextPlayerNumber = playerNumber + 1
             }
             playersLabel.text = "\(players[playerNumber].name ?? "") → \(players[nextPlayerNumber].name ?? "")".uppercased()
-            // нужно ли добавлять игроку кнопку ДОП ВРЕМЯ
-            //print(extraTime)
-            //print(!players[playerNumber].extraTimeIsUsed)
             
+            // нужно ли добавлять игроку кнопку ДОП ВРЕМЯ
             if extraTime && !players[nextPlayerNumber].extraTimeIsUsed { extraTimeButton.isHidden = false }
             else { extraTimeButton.isHidden = true }
         }
         
-        //print(extraTimeButton.isHidden)
         
         //playersLabel.text = "50 оттенков проигрыша → Штормовое предупреждение".uppercased() // для теста удалить
         //playersLabel.text = "Штормовое предупреждение → 50 оттенков проигрыша".uppercased() // для теста удалить

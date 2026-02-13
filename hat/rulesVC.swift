@@ -24,7 +24,8 @@ class rulesVC: UIViewController, UIPageViewControllerDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        pageImages = (1...rulesPagesCount).map { "rules\($0)_\(cur_lang)" }
+        //pageImages = (1...rulesPagesCount).map { "rules\($0)_\(cur_lang)" }
+        pageImages = (1...rulesPagesCount).map { "rules\($0)" }
         
         setBackButton()
         setAttributes()

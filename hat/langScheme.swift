@@ -288,7 +288,9 @@ let lang_scheme = [
         "gotScoresText_1": " набрал:",
         "ownSectionDesc": "Своя категория",
         "editGameTypeAlertTitle": "Точно изменить тип игры?",
-        "editGameTypeAlertMessage": "При изменении типа игры, текущая игра не сохранится",
+        "editGameTypeAlertMessage": "При изменении типа игры, текущая игра не сохранится и начнется новая игра",
+        "editRoundTypeAlertTitle": "Точно изменить раунды для игры?",
+        "editRoundTypeAlertMessage": "При изменении раундов, текущая игра не сохранится и начнется новая игра",
         "players": "Игроки",
         "teams": "Команды",
         "sections": "Разделы",
@@ -355,7 +357,7 @@ let lang_scheme = [
         "whoGuessAlertTitle": "Кто угадал последнее слово?",
         "commonText": "общее",
         "pauseText": "Пауза",
-        "alertLikeAppTitle": "Нравится наш Alias)?",
+        "alertLikeAppTitle": "Нравится наша Шляпа)?",
         "alertRatePleaseTitle": "Мы очень рады!)",
         "alertRatePleaseMessage": "Поможете нам маленьким отзывом?",
         "alertRatePleaseLater": "Позже",
@@ -440,7 +442,9 @@ let lang_scheme = [
         "reviewAlertMessage": "Well, do you enjoy our game?:)",
         "reviewAlertLeaveReview": "Yes! I will rate it! :)",
         "reviewAlertAlreadyLeft": "Yes, my review has already been left :)",
-        "reviewAlertNotDecided": "Haven't decided yet..."
+        "reviewAlertNotDecided": "Haven't decided yet...",
+        "alertYes": "Yes",
+        "alertNo": "No",
     ],
     "en": [
         
@@ -700,7 +704,9 @@ let lang_scheme = [
         "gotScoresText_1": " набрал:",
         "ownSectionDesc": "Своя категория",
         "editGameTypeAlertTitle": "Точно изменить тип игры?",
-        "editGameTypeAlertMessage": "При изменении типа игры, текущая игра не сохранится",
+        "editGameTypeAlertMessage": "При изменении типа игры, текущая игра не сохранится и начнется новая игра",
+        "editRoundTypeAlertTitle": "Точно изменить раунды для игры?",
+        "editRoundTypeAlertMessage": "При изменении раундов, текущая игра не сохранится и начнется новая игра",
          "sections": "Разделы",
          "blocks": "Блоки",
          "articles": "Статьи",
@@ -762,7 +768,7 @@ let lang_scheme = [
         "whoGuessAlertTitle": "Who guessed the word?",
         "commonText": "common",
         "pauseText": "Pause",
-        "alertLikeAppTitle": "Enjoy using Alias?",
+        "alertLikeAppTitle": "Enjoy using The Hat?",
         "alertRatePleaseTitle": "Hero!",
         "alertRatePleaseMessage": "Can you help us with a quick review?",
         "alertRatePleaseLater": "Later",
@@ -844,7 +850,9 @@ let lang_scheme = [
         "reviewAlertMessage": "Well, do you enjoy our game?:)",
         "reviewAlertLeaveReview": "Yes! I will rate it! :)",
         "reviewAlertAlreadyLeft": "Yes, my review has already been left :)",
-        "reviewAlertNotDecided": "Haven't decided yet..."
+        "reviewAlertNotDecided": "Haven't decided yet...",
+        "alertYes": "Да",
+        "alertNo": "Нет",
     ]
 ]
 

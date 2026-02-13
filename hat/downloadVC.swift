@@ -222,10 +222,10 @@ class downloadVC: UIViewController, DownloadDelegate {
             fullImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
             fullImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
             
-            downloadButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 316/375*widthCoefiPhone).isActive = true
-            restoreButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 316/375*widthCoefiPhone).isActive = true
+            downloadButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 316/375*0.9).isActive = true
+            restoreButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 316/375*0.9).isActive = true
         
-            closeButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 64/375*0.8).isActive = true
+            closeButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 64/375*0.7).isActive = true
         } else {
             fullImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
             fullImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true

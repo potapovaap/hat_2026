@@ -56,10 +56,6 @@ extension startNewPlayerVC {
         // тип игры: 0 - командная  / 1 - одночная
         let gameType = Int(settings["gameType"] ?? "0") ?? 0
         if gameType == 0 {
-            print(players)
-            print(players.count)
-            print(playerNumber)
-            
             firstPlayerLabel.isHidden = true
             infoLabel.text = "\(explainsTeamText)\(playerNumber + 1):".uppercased()
             secondPlayerLabel.text = (players[playerNumber].name ?? "").uppercased()
